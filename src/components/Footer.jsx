@@ -67,7 +67,7 @@ const IgIcon = () => {
 export default function Footer() {
   return (
     <footer className="bg-[#F58634] text-[#ECECEC] px-10 py-[30px]">
-      <section className="max-w-[1440px] mx-auto grid grid-cols-1 md:grid-cols-4 gap-6">
+      <section className="max-w-[1440px] mx-auto grid grid-cols-2 md:grid-cols-4 place-items-start gap-6">
         <div>
           <img
             src="/images/footerImg.png"
