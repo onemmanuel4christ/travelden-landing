@@ -45,3 +45,8 @@
 ::-webkit-scrollbar-thumb:hover {
   background: #00A859; 
 } 
+
+.smoot{
+  	transition: opacity 0.3s, transform 0.3s;
+    
+}

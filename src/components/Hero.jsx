@@ -8,13 +8,16 @@ export default function Hero() {
         backgroundImage: "url('/images/heroImg.png')",
         backgroundRepeat: "no-repeat",
         backgroundSize: "cover",
+        backgroundPosition: "center"
+        
       }}
-      className="min-h-[648px]"
+      className="min-h-[648px] relative"
     >
-      <Navbar />
-      <div className="overlay">
+      {/* <Navbar /> */}
+      <div className="overlay absolute top-0 left-0 w-full h-full">
+      </div>
         <Fade bottom>
-          <div className="max-w-[1440px] mx-auto md:px-[100px] lg:px-[100px] md:py-[100px] p-10 flex justify-start items-start">
+          <div className="max-w-[1440px] mx-auto md:px-[100px] lg:px-[100px] py-[200px] p-10 flex justify-start items-center">
             <div className="max-w-[522px] flex flex-col justify-center items-start">
               <h1 className="md:text-[2.5rem] text-[1.8rem] font-bold md:leading-[48.83px] mb-[20px]">
                 Lörem ipsum begon össa. Lumasam ilåjyr. Irenar parad i vaktigt.
@@ -30,7 +33,6 @@ export default function Hero() {
             </div>
           </div>
         </Fade>
-      </div>
     </section>
   );
 }

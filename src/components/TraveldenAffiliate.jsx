@@ -28,7 +28,8 @@ export default function TraveldenAffiliate() {
               benefits that others do not
             </p>
           </div>
-          <div className="flex justify-around gap-[10px] items-center flex-wrap mt-10 px-5">
+          {/* <div className="flex justify-center gap-[20px] items-center flex-wrap mt-10 px-5"> */}
+          <div className="grid md:grid-cols-2 place-items-center lg:grid-cols-4 w-fit mx-auto gap-[20px] mt-10 px-5">
             <Card
               icon={tag1}
               title="Discounted Fares At Affordable Rates"

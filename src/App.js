@@ -1,4 +1,5 @@
 import Footer from "./components/Footer";
+import Navbar from "./components/Navbar";
 import Affiliate from "./pages/Affiliate";
 import Contact from "./pages/Contact";
 import ErrorPage from "./pages/ErrorPage";
@@ -7,6 +8,7 @@ import { Route, Routes } from "react-router-dom";
 function App() {
   return (
     <div className="">
+      <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/affiliates" element={<Affiliate />} />

@@ -1,33 +1,40 @@
-import React, { useEffect, useState } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import React, { useEffect, useState } from "react";
+import { Link, useLocation } from "react-router-dom";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [scroll, setScroll] = useState(false);
   const routePath = useLocation();
-  
-const onTop = () => {
-  window.scrollTo(0, 0);
-};
-useEffect(() => {
-  onTop();
-}, [routePath]);
 
-// useEffect(() => {
-//   const addBorder = () => {
-//     if (window.scrollY >= 100) {
-//       setScroll(true);
-//     } else {
-//       setScroll(false);
-//     }
-//   };
-//   window.addEventListener("scroll", addBorder);
-// });
+  const onTop = () => {
+    window.scrollTo(0, 0);
+  };
+  useEffect(() => {
+    onTop();
+  }, [routePath]);
+
+  useEffect(() => {
+    const addBorder = () => {
+      if (window.scrollY >= 100) {
+        setScroll(true);
+      } else {
+        setScroll(false);
+      }
+    };
+    window.addEventListener("scroll", addBorder);
+  });
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
 
   return (
-    <nav className="bg-[#FFFFFFE5] sticky top-0 left-0 right-0 z-50">
+    <nav
+      className={
+        scroll
+          ? "bg-[#FFFFFFE5] smoot fixed top-0 left-0 right-0 z-50 transition-all"
+          : "bg-[#ffffff9b] smoot fixed top-0 left-0 right-0 z-50 transition-all"
+      }
+    >
       <div className="max-w-[1440px] mx-auto md:px-[80px] px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-[100px]">
           <Link to="/" className="flex-shrink-0">
@@ -95,12 +102,14 @@ useEffect(() => {
                     fillRule="evenodd"
                     clipRule="evenodd"
                     d="M20.293 5.293l-4-4-1.414 1.414L17.586 4H3v2h14.586l-2.707 2.707 1.414 1.414 4-4a1 1 0 000-1.414zM3 10h18v2H3v-2zm18 4H3v2h18v-2z"
+                    fill="#00A859"
                   />
                 ) : (
                   <path
                     fillRule="evenodd"
                     clipRule="evenodd"
                     d="M4 6h16v2H4V6zm0 5h16v2H4v-2zm0 5h16v2H4v-2z"
+                    fill="#00A859"
                   />
                 )}
               </svg>
@@ -109,7 +118,7 @@ useEffect(() => {
         </div>
         {isOpen && (
           <div className="lg:hidden">
-            <div className="px-2 pt-2 space-y-2 sm:px-3 pb-5">
+            <div className="px-2 pt-2 mb-10  sm:px-3 pb-5">
               <Link
                 to="/"
                 className="text-[#727376] hover:text-[#F58634]  block px-3 py-2 rounded-md text-base font-medium"
